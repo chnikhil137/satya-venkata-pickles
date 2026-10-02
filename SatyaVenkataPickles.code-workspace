@@ -1,0 +1,50 @@
+﻿{
+    "tasks":  {
+                  "version":  "2.0.0",
+                  "tasks":  [
+                                {
+                                    "label":  "Install dependencies",
+                                    "problemMatcher":  [
+
+                                                       ],
+                                    "command":  "npx.cmd --yes pnpm@10 install --frozen-lockfile",
+                                    "type":  "shell"
+                                },
+                                {
+                                    "label":  "Start storefront",
+                                    "problemMatcher":  [
+
+                                                       ],
+                                    "command":  "npx.cmd --yes pnpm@10 dev",
+                                    "type":  "shell",
+                                    "isBackground":  true
+                                },
+                                {
+                                    "label":  "Test order logic",
+                                    "problemMatcher":  [
+
+                                                       ],
+                                    "command":  "npx.cmd --yes pnpm@10 test",
+                                    "type":  "shell"
+                                },
+                                {
+                                    "label":  "Production build",
+                                    "group":  "build",
+                                    "command":  "npx.cmd --yes pnpm@10 build",
+                                    "type":  "shell",
+                                    "problemMatcher":  [
+
+                                                       ]
+                                }
+                            ]
+              },
+    "folders":  [
+                    {
+                        "path":  "."
+                    }
+                ],
+    "settings":  {
+                     "editor.tabSize":  2,
+                     "files.eol":  "\n"
+                 }
+}

@@ -32,7 +32,7 @@ The production output is `dist/`. `npm test`, `npm run build` and `npm start` al
 ## Deploy
 
 - **Netlify:** Import this project, use `npm run build`, and publish `dist`. Or run the build locally and drag the `dist` folder into Netlify's manual deployment screen.
-- **Vercel:** Import this project, select **Vite**, use `npm run build`, output directory `dist`. The included `vercel.json` configures these settings.
+- **Vercel:** Import this project, select **Vite**, build command `pnpm build`, output directory `dist`. The included `vercel.json` configures these settings.
 - **Any static host:** Upload the contents of `dist`. There are no server routes or environment secrets.
 - **Sites:** `.openai/hosting.json` identifies the registered site; the Sites workflow publishes the same static `dist` output.
 
