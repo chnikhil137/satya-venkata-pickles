@@ -1,0 +1,34 @@
+﻿You are the senior product designer, frontend engineer and QA engineer for SATYA VENKATA PICKLES, a real homemade Andhra food business. Improve this existing working storefront into a remarkably polished, launch-ready product. Implement the work; do not just produce a plan. Make strong design decisions without asking aesthetic questions. Keep work focused and efficient.
+
+CONTEXT AND FIRST STEPS
+Repository: https://github.com/chnikhil137/satya-venkata-pickles
+Existing site: https://satya-venkata-pickles.chnikhil137.chatgpt.site
+This is a gift for the business owner's son. The customer journey is browse > select size and quantity > cart > customer details > send order through WhatsApp.
+Read README.md, docs/PROJECT_OVERVIEW.md, QA.md, package.json, src/data/products.ts, src/config/business.ts, src/utils/order.ts and tests/order.test.mjs. Inspect docs/original-menu.jpg and the actual rendered application before changing it. Follow applicable project instructions. Check git status and preserve all existing work. Work on antigravity/experience-upgrade; if necessary create a fresh named branch, never reset somebody else's changes.
+
+THE DESIGN CHALLENGE
+Create a cohesive premium regional food brand: warm parchment, deep leaf green, restrained chilli/burgundy, fine gold accents, sophisticated typography, generous but practical spacing and delicate botanical details. Use original artwork in public/assets/menu-brand.webp thoughtfully. Preserve the actual portrait; never generate or substitute a fake person. Prefer beautiful typography and simple vector details to stock photos or generated food photography. Make the mobile first screen compelling and compact. The site should feel personal, trustworthy and intentionally art directed.
+Improve the entire system, not just the hero: wordmark, navigation, category controls, search, product cards, quantity controls, size chips, cart drawer, form fields, feedback, special orders, story and footer. Give desktop an equally considered composition. Add restrained feedback and transitions, with reduced-motion support. Avoid giant cards, visual clutter, gradients, gimmicks, invented social proof and expensive animation libraries.
+
+NON-NEGOTIABLE BUSINESS CONTRACT
+The original menu is the factual source of truth. All 24 products and 36 size/price variants must remain exact. Veg and podi products have only 250g; the six non-veg products have 250g, 500g and 1kg. Preserve exact variant prices in src/data/products.ts; never scatter prices through components. Flag any genuine discrepancy instead of guessing.
+Primary WhatsApp is +91 9908116937; secondary is +91 9908935118. Keep numbers and delivery wording editable in src/config/business.ts. Delivery charges are additional and depend on location. Do not imply the product total includes delivery.
+Only use menu-backed claims: freshly prepared after order, traditional homemade taste, premium quality ingredients, hygienically prepared and packed, no artificial preservatives. Special orders: festivals, functions, birthdays, bulk orders, return gifts. Do not invent ingredients, shelf life, nutrition, discounts, delivery promises, reviews, certifications, an address or family history. Keep the story warm and dignified.
+
+FUNCTIONAL CONTRACT
+Preserve instant category filters and search; valid sizes; quantity changes; separate cart lines for different sizes; add/remove/clear; mathematically correct subtotals and totals; count of packs; localStorage persistence and sanitization; a usable empty state; visible add-to-order feedback; and the mobile sticky order bar.
+Checkout requires only name and mobile number. Area, city and delivery notes remain optional. Build the WhatsApp message from the current cart and entered customer data, including quantities, weights, line totals, product total and delivery notice. Encode it correctly for https://wa.me/919908116937?text=... . Preserve a working copy-summary button and the separate special-order enquiry. Never send a real test order. Opening WhatsApp is not confirmation that an order was sent or accepted. Keep personal checkout details out of persistent storage.
+Preserve ?product=mango-pickle and other valid product links for future jar QR codes. Unknown product IDs must fail gracefully.
+
+ENGINEERING SCOPE
+Keep React, TypeScript and Vite, static hosting, no backend/database/authentication/payment gateway or required secrets. Use existing components where they help. Clean up unused starter files, obsolete scripts and dependencies only after checking references. Preserve the lockfile and use pnpm. Keep project structure understandable: src/components, src/data, src/config, src/hooks, src/utils and src/styles. Make local Windows setup straightforward.
+Use semantic HTML, proper labels, keyboard access, focus trapping/restoration for the drawer, sufficient contrast and practical touch targets. Prevent body-scroll issues, keyboard-obscured checkout actions, sticky bar overlap and horizontal overflow. Honor safe-area insets and reduced motion. Keep assets and production JavaScript lightweight.
+
+VERIFY BEFORE FINISHING
+Run the existing tests and production build before and after changes. Add only meaningful regression tests for changed behavior. Actually inspect and interact with the rendered site at widths 320, 360, 390 and 430, plus tablet and desktop. Save representative screenshots and check the console.
+Verify all three categories, search and no-results, one-size and three-size products, quantity increments/decrements, distinct-size cart lines, removal, clear/empty, reload persistence, bad stored data, validation, clipboard, deep links, keyboard navigation and 200% text zoom. Inspect the real checkout-generated URL without sending an order. Confirm decoding recovers the exact message including Unicode and line breaks.
+Mathematical acceptance example: Mango 250g x 2 = Rs 360; Boneless Chicken 500g x 1 = Rs 600; Idli Podi 250g x 1 = Rs 150; total = Rs 1,110. Do not hard-code this example into the app.
+
+HANDOFF FOR LATER VERCEL DEPLOYMENT
+Keep vercel.json correct for Vite with build command pnpm build and output directory dist. No secrets should be required. Do not deploy, change domains, merge into main or overwrite the existing live site. Update README and QA with exact commands, actual checks, screenshots and genuine limitations. If a committed static ZIP is retained, regenerate it from the final build so it is not stale.
+Commit the completed work on the feature branch, and push that branch to the existing GitHub repository if authentication permits. Never force-push. If authentication is missing, leave the local commit ready and report the exact push command. Finish with a concise report: design changes, test/build results, branch, commit SHA, GitHub branch link, run command, and anything still blocking release. The owner will bring the finished repository back to Codex for Vercel deployment.
